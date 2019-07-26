@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 //
 import '../css/App.css'
 //
+import Video from './theBeach.mp4'
 
 class Home extends Component {
   constructor(props) {
@@ -17,7 +18,9 @@ class Home extends Component {
     console.log('This is the state', this.state)
       return (
         <div>
-        	<p> This is a test</p>
+        	<video id='background-video' loop autoPlay muted className='video'>
+	          <source src={Video} type='video/mp4' />
+	        </video>
         </div>
       )
   }
