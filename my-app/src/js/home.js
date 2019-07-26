@@ -4,6 +4,8 @@ import '../css/App.css'
 //
 import Video from './theBeach.mp4'
 //
+import HomeImage from '../css/homeImage.jpg'
+//
 import Timer from 'react-compound-timer'
 
 class Home extends Component {
@@ -15,6 +17,7 @@ class Home extends Component {
   }
 
   getTimes = () => {
+
   	// ---- get time elapsed before today
   	let date1 = new Date(2019, 5, 7, 0, 0, 0)
   	let date2 = new Date()
@@ -26,6 +29,7 @@ class Home extends Component {
 	console.log(diffDays);
 
 	let miliNum = 86400000 * diffDays
+
 	// ---- get todays elapsed time
 	function getSecondsToday() {
 	  let now = new Date();
@@ -68,6 +72,9 @@ class Home extends Component {
 	  			<p> for Ontario's Legislature</p>
 	  		</div>
 	  	</div>
+	  	<div className="imageContainer">
+	  		<img src={HomeImage} alt="Doug Ford Swimming" className="ImageHeight"/>
+	  	</div>
   	</div>
 
   	return title
@@ -87,10 +94,10 @@ class Home extends Component {
 			    {({ start}) => (
 			        <React.Fragment>
 			            <div>
-			                <Timer.Days /> days &#00;
-			                <Timer.Hours /> hours &#00;
-			                <Timer.Minutes /> minutes &#00;
-			                <Timer.Seconds /> seconds &#00;
+			                <Timer.Days /> Days &#00;
+			                <Timer.Hours /> Hours &#00;
+			                <Timer.Minutes /> Minutes &#00;
+			                <Timer.Seconds /> Seconds &#00;
 			            </div>
 			        </React.Fragment>
 			    )}
