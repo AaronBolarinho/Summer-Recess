@@ -40,3 +40,14 @@
   animation-delay: 3s;
   animation-duration: 3s;
 }
+
+.clock {
+    font-family: 'Tiki-Tropic',serif;
+    position: absolute;
+    text-align: center;
+    top: 60%;
+    right: 35%;
+    left: 0%;
+    bottom: 56%;
+    font-size: 250%;
+}
