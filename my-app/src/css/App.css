@@ -1,3 +1,6 @@
+@font-face { font-family: Tiki-Tropic; 
+       src: url('./fonts/tiki-tropic.regular.ttf'); }
+
 .video {
   position: relative;
   width:  100%;
@@ -5,5 +8,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden
+  overflow: hidden;
+  z-index: -100;
+}
+
+.centerText {
+    text-align: center;
+  }
+
+.textWhite {
+  color: white;
+}
+
+
+.title {
+    font-family: 'Tiki-Tropic',serif;
+    position: absolute;
+    text-align: center;
+    top: 5%;
+    right: 35%;
+    left: 0px;
+    bottom: 0px;
+    font-size: 350%;
+}
+
+.displayInline {
+    display: inline-block;
+}
+
+.delayAnimation {
+  animation-delay: 3s;
+  animation-duration: 3s;
 }
