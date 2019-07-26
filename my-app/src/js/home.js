@@ -63,13 +63,13 @@ class Home extends Component {
 	  			<span>&#93;</span>
 	  		</div>
 	  		<div className="displayInline">
-	  			<span> Summer Recess</span>
+	  			<span> Doug Ford's</span>
 	  		</div>
 	  		<div className="animated infinite heartBeat delayAnimation displayInline">
 	  			<span>&#125;</span>
 	  		</div>
 	  		<div>
-	  			<p> for Ontario's Legislature</p>
+	  			<p> &#34;Summer&#34; Recess </p>
 	  		</div>
 	  	</div>
 	  	<div className="imageContainer">
