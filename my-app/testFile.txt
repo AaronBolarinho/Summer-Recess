@@ -2,12 +2,10 @@ import React, { Component } from 'react'
 //
 import '../css/App.css'
 //
-import DayBeach from './theBeach.mp4'
-import NightBeach from './NightBeach.mp4'
+import Video from './theBeach.mp4'
 //
 import HomeImage from '../css/BubbleFord.png'
 import Bubbles from '../css/bubbles.png'
-import FishButton from '../css/FishyButton.png'
 //
 import Timer from 'react-compound-timer'
 //
@@ -65,6 +63,11 @@ class Home extends Component {
   renderTitle = () => {
   	let title = 
   	<div>
+  		<div>
+	    	<video id='background-video' loop autoPlay muted className='video'>
+	          <source src={Video} type='video/mp4' />
+	        </video>
+        </div>
 	  	<div className="centerText title textWhite">
 	  		<div className="animated infinite wobble delayAnimation displayInline">
 	  			<span>&#93;</span>
@@ -118,8 +121,8 @@ class Home extends Component {
   renderModal = () => {
   	let modal = 
   	<div>
-        <img src={FishButton} onClick={this.toggleModal} alt="Scared Fishy" className=""/>
-        <Modal isOpen={this.state.modal} toggle={this.toggleModal} className={this.props.className}>
+        <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
           <ModalBody>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -142,53 +145,88 @@ class Home extends Component {
   render() {
     console.log('This is the state', this.state)
       return (
-      	<div>
-      		<div>
-      			<video id='background-video' loop autoPlay muted className='video'>
-		          <source src={DayBeach} type='video/mp4' />
-		        </video>
-      			{this.renderTitle()}
-			    {this.renderTimer()}
-			    <div className="stripsDiv">
-			    	<div className="secondStrip">
-				    	<p className="newsQuote">
-				    		"Since June 7th, 2018, the Ontario government has moved at an unprecedented pace. <br></br>The government intends to move a motion tomorrow to adjourn the House until October 28th, 2019..."
-				    	</p>
-				    	<img src={FishButton}  alt="Scared Fishy" className="NewsQuoteFish"/>
-				    </div>
-				    <div className="thirdStrip">
-				    	<div>
-				    		<video id='background-video' loop autoPlay muted className='video video2'>
-					          <source src={NightBeach} type='video/mp4' />
-					        </video>
-					        <div className="thirdStripTitle">
-						        <div className="animated infinite wobble delayAnimation displayInline">
-						  			<span>&#93;</span>
-						  		</div>
-						        <p className="displayInline"> Doogie's Breesy</p>
-						        <div className="animated infinite heartBeat delayAnimation displayInline">
-						  			<span>&#125;</span>
-						  		</div>
-						  		<p> Summer Haiku</p>
-
-						  		<div className="haiku">
-						  			<p>The Polls Are Sinking</p>
-						  			<p>Patios and Buck-A-Beer</p>
-						  			<p>The Polls are Rising</p>
-						  		</div>
-					  		</div>
-				    	</div>
-				    </div>
-
-				    {/* <div className="fourthStrip"> */}
-				    {/* 	 */}
-				    {/* </div> */}
-				    	
-				    </div>
-      		</div>
+      	<div className='d-flex container'>
+	      {this.renderTitle()}
+	      {this.renderTimer()}
+	      {this.renderModal()}
 	    </div>
       )
   }
 }
 
 export default Home
+// -------------------------------
+
+@font-face { font-family: Tiki-Tropic; 
+       src: url('./fonts/tiki-tropic.regular.ttf'); }
+
+.video {
+  position: relative;
+  width:  100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.centerText {
+    text-align: center;
+  }
+
+.textWhite {
+  color: white;
+}
+
+
+.title {
+    font-family: 'Tiki-Tropic',serif;
+    position: absolute;
+    text-align: center;
+    top: 5%;
+    right: 35%;
+    left: 0px;
+    bottom: 0px;
+    font-size: 350%;
+}
+
+.displayInline {
+    display: inline-block;
+}
+
+.delayAnimation {
+  animation-delay: 3s;
+  animation-duration: 3s;
+}
+
+.clock {
+    font-family: 'Tiki-Tropic',serif;
+    position: absolute;
+    text-align: center;
+    top: 82%;
+    right: 35%;
+    left: 0%;
+    bottom: 56%;
+    font-size: 250%;
+}
+
+.imageContainer {
+    position: absolute;
+    top: 33%;
+    bottom: 0;
+    left: 23%;
+    right: 0;
+    height: 37%;
+}
+
+.FordImage {
+  height: 100%;
+}
+
+.bubbles{
+    height: 48%;
+    position: absolute;
+    left: 19%;
+    bottom: -19%;
+}
